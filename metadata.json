@@ -1,0 +1,6 @@
+{
+  "name": "Minecraft Community",
+  "description": "A modern, dark-themed Minecraft community hub with account linking, multiplayer server browser, live voice lobbies, real-time live chat, and discussions.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

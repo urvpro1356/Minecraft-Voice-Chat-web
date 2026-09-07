@@ -1,0 +1,311 @@
+import {
+  ChatLobby,
+  Contributor,
+  DiscussionPost,
+  FriendUser,
+  GroupParty,
+  LinkedAccount,
+  ServerItem,
+  TopicStats,
+} from '../types';
+
+export const CURRENT_USER = {
+  id: 'user_alex',
+  username: 'AlexCrafter',
+  gamertag: 'AlexTheBuilder_',
+  avatar: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&auto=format&fit=crop&q=80',
+  level: 48,
+  rankBadge: 'Netherite VIP',
+  coins: 3450,
+  xpProgress: 74,
+};
+
+export const INITIAL_LINKED_ACCOUNTS: Record<'java' | 'bedrock', LinkedAccount> = {
+  java: {
+    edition: 'java',
+    gamertag: '',
+    isLinked: false,
+  },
+  bedrock: {
+    edition: 'bedrock',
+    gamertag: '',
+    isLinked: false,
+  },
+};
+
+export const INITIAL_SERVERS: ServerItem[] = [
+  {
+    id: 'srv-1',
+    name: 'Hypixel Network',
+    ip: 'mc.hypixel.net',
+    port: 25565,
+    online: true,
+    playersOnline: 48920,
+    maxPlayers: 80000,
+    pingMs: 24,
+    gamemodes: ['Bedwars', 'Skyblock', 'Duels', 'Murder Mystery'],
+    description: 'The world biggest Minecraft minigame network with custom adventures and ranked competitive ladders.',
+    version: '1.8.9 - 1.21.x',
+    iconUrl: 'https://images.unsplash.com/photo-1627856013091-fed6e4e30025?w=120&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'srv-2',
+    name: 'Wynncraft MMORPG',
+    ip: 'play.wynncraft.com',
+    port: 25565,
+    online: true,
+    playersOnline: 3410,
+    maxPlayers: 6000,
+    pingMs: 38,
+    gamemodes: ['MMORPG', 'Quests', 'Dungeons', 'Custom Bosses'],
+    description: 'A massive open-world RPG in vanilla Minecraft. Over 100+ unique quests, spell combos, and guild wars.',
+    version: '1.20.4',
+    iconUrl: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=120&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'srv-3',
+    name: 'Aetheria SMP Survival',
+    ip: 'smp.aetheria-mc.org',
+    port: 25565,
+    online: true,
+    playersOnline: 184,
+    maxPlayers: 300,
+    pingMs: 19,
+    gamemodes: ['Vanilla+', 'Hardcore Economy', 'Land Claims', 'Voice Chat'],
+    description: 'Whitelisted Hermitcraft-style community with proximity voice chat, diamond currency, and grief prevention.',
+    version: '1.21.1',
+    iconUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=120&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'srv-4',
+    name: 'Redstone Academy Hub',
+    ip: 'redstone.buildlab.io',
+    port: 25565,
+    online: true,
+    playersOnline: 92,
+    maxPlayers: 250,
+    pingMs: 45,
+    gamemodes: ['Creative', 'Logic Gates', 'WorldEdit', 'Plots'],
+    description: 'Creative server dedicated to high-speed redstone computers, contraptions, and automatic quarry builds.',
+    version: '1.21.0',
+    iconUrl: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=120&auto=format&fit=crop&q=80',
+  },
+];
+
+export const INITIAL_GROUPS: GroupParty[] = [];
+
+export const INITIAL_CHAT_LOBBIES: ChatLobby[] = [];
+
+export const INITIAL_FRIENDS: FriendUser[] = [
+  {
+    id: 'f-1',
+    name: 'EnderKnight_99',
+    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80',
+    status: 'online',
+    activity: 'Playing Bedwars (4-win streak)',
+    level: 54,
+    rankBadge: 'Emerald VIP',
+  },
+  {
+    id: 'f-2',
+    name: 'DiamondValkyrie',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80',
+    status: 'online',
+    activity: 'In Voice: Bedwars Squads',
+    level: 61,
+    rankBadge: 'Diamond Master',
+  },
+  {
+    id: 'f-3',
+    name: 'PixieTerra',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80',
+    status: 'idle',
+    activity: 'Designing Cathedral in Creative',
+    level: 42,
+    rankBadge: 'Master Architect',
+  },
+  {
+    id: 'f-4',
+    name: 'RedstoneDoc',
+    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&auto=format&fit=crop&q=80',
+    status: 'dnd',
+    activity: 'Wiring 8-bit ALU calculator',
+    level: 70,
+    rankBadge: 'Mythic Redstone',
+  },
+  {
+    id: 'f-5',
+    name: 'CreeperSlayerX',
+    avatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100&auto=format&fit=crop&q=80',
+    status: 'offline',
+    activity: 'Last seen 4 hours ago',
+    level: 39,
+    rankBadge: 'Gold Warrior',
+  },
+];
+
+export const INITIAL_DISCUSSIONS: DiscussionPost[] = [
+  {
+    id: 'disc-1',
+    title: 'Showcase: Fully Functional 16-Bit RISC CPU built inside vanilla Minecraft 1.21 without commands!',
+    content: 'Took me over 4 months to engineer the instruction decoder, clock sync, and 256 bytes of piston ROM. It runs Fibonacci sequences and displays the output on a 32x32 lamp screen!',
+    author: {
+      name: 'RedstoneDoc',
+      avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&auto=format&fit=crop&q=80',
+      rankBadge: 'Mythic Redstone',
+      level: 70,
+    },
+    category: 'Redstone',
+    createdAt: '2 hours ago',
+    upvotes: 1420,
+    userVote: 'up',
+    commentCount: 86,
+    comments: [
+      {
+        id: 'c1',
+        authorName: 'LogicPiston',
+        authorAvatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80',
+        authorBadge: 'Engineer',
+        content: 'The clock tick synchronization using copper bulb pulse limiters is pure genius. What is your clock cycle speed?',
+        timestamp: '1 hour ago',
+        upvotes: 48,
+      },
+      {
+        id: 'c2',
+        authorName: 'AlexCrafter',
+        authorAvatar: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&auto=format&fit=crop&q=80',
+        authorBadge: 'Netherite VIP',
+        content: 'Insane dedication! Would love to see a world download or schematic link so we can test it in creative.',
+        timestamp: '35 mins ago',
+        upvotes: 24,
+      },
+    ],
+    tags: ['Redstone', 'Showcase', 'Vanilla 1.21', 'Engineering'],
+    contributors: [
+      { id: 'c1', name: 'LogicPiston', avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80' },
+      { id: 'c2', name: 'AlexCrafter', avatar: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&auto=format&fit=crop&q=80' },
+      { id: 'c3', name: 'BlockMaster', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80' },
+    ],
+    isSaved: true,
+  },
+  {
+    id: 'disc-2',
+    title: 'Tips for conquering the Deep Dark Ancient City on Day 1 of a Hardcore World',
+    content: 'Wool occluding is your best friend. Always keep 2 stacks of white wool and swift sneak boots. Here is my complete step-by-step pathing guide to avoid triggering shrieker shriekers.',
+    author: {
+      name: 'EnderKnight_99',
+      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80',
+      rankBadge: 'Emerald VIP',
+      level: 54,
+    },
+    category: 'Guides',
+    createdAt: '5 hours ago',
+    upvotes: 894,
+    userVote: null,
+    commentCount: 42,
+    comments: [
+      {
+        id: 'c3',
+        authorName: 'ObsidianTank',
+        authorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
+        content: 'Pro tip: Bring a hoe to quickly harvest the sensors if you make a misstep before the 4th screech!',
+        timestamp: '3 hours ago',
+        upvotes: 19,
+      },
+    ],
+    tags: ['Guides', 'Hardcore', 'Warden', 'Survival'],
+    contributors: [
+      { id: 'c4', name: 'ObsidianTank', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80' },
+      { id: 'c5', name: 'GoldApple', avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop&q=80' },
+    ],
+    isSaved: false,
+  },
+  {
+    id: 'disc-3',
+    title: 'Floating Elven Citadel built on our private SMP — 1.5 Million blocks placed over 6 months',
+    content: 'Complete with glowing bioluminescent spore blossoms, winding bridges over misty clouds, and custom dragon roost towers. Rendered with Complementary Reimagined Shaders.',
+    author: {
+      name: 'PixieTerra',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80',
+      rankBadge: 'Master Architect',
+      level: 61,
+    },
+    category: 'Builds',
+    createdAt: '1 day ago',
+    upvotes: 2130,
+    userVote: null,
+    commentCount: 118,
+    comments: [
+      {
+        id: 'c4',
+        authorName: 'DiamondValkyrie',
+        authorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80',
+        content: 'The gradient from deepslate tile to prismarine on the roofs is stunning. Masterclass in color palettes.',
+        timestamp: '18 hours ago',
+        upvotes: 62,
+      },
+    ],
+    tags: ['Builds', 'Fantasy', 'SMP', 'Shaders'],
+    contributors: [
+      { id: 'c6', name: 'DiamondValkyrie', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80' },
+      { id: 'c7', name: 'PyroManiac', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80' },
+    ],
+    isSaved: true,
+  },
+];
+
+export const POPULAR_CONTRIBUTORS: Contributor[] = [
+  {
+    id: 'contr-1',
+    username: 'PixieTerra',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80',
+    points: 24890,
+    rank: 1,
+    badge: 'Master Architect',
+    specialty: 'Fantasy Mega Builds',
+  },
+  {
+    id: 'contr-2',
+    username: 'RedstoneDoc',
+    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&auto=format&fit=crop&q=80',
+    points: 19420,
+    rank: 2,
+    badge: 'Redstone Wizard',
+    specialty: 'Piston Computing & Farms',
+  },
+  {
+    id: 'contr-3',
+    username: 'EnderKnight_99',
+    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80',
+    points: 15310,
+    rank: 3,
+    badge: 'Nether Slayer',
+    specialty: 'Speedrunning & PvP Tactics',
+  },
+  {
+    id: 'contr-4',
+    username: 'DiamondValkyrie',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80',
+    points: 12840,
+    rank: 4,
+    badge: 'SMP Elder',
+    specialty: 'Resource Pack Artist',
+  },
+  {
+    id: 'contr-5',
+    username: 'LogicPiston',
+    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80',
+    points: 9780,
+    rank: 5,
+    badge: 'Contraption Lead',
+    specialty: 'Slimeblock Aircrafts',
+  },
+];
+
+export const TOPIC_STATS: TopicStats = {
+  subscribers: '842.5K',
+  projectsThisWeek: '3,418',
+  growthPercentage: '+14.2%',
+};
+
+export const INITIAL_MESSAGES: Record<string, any[]> = {};
